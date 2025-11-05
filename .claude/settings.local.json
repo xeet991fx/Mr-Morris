@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(nul)",
+      "Bash(dir /s \"C:\\Users\\imkum\\SDE\\MrMorris\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint)",
+      "Bash(npx create-next-app:*)",
+      "Bash(dir:*)",
+      "Bash(npm install)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_close",
+      "Bash(npm install:*)",
+      "Bash(timeout:*)",
+      "mcp__playwright__browser_evaluate"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

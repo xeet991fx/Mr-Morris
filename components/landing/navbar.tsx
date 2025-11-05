@@ -1,0 +1,64 @@
+"use client"
+
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/shared/theme-toggle"
+
+export function Navbar() {
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.getElementById("waitlist")
+    waitlistSection?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  return (
+    <nav className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#071013] to-[#eb5160]">
+              <span className="text-lg font-bold text-white">M</span>
+            </div>
+            <span className="text-xl font-bold">MrMorris</span>
+          </Link>
+        </div>
+
+        <div className="hidden items-center gap-6 md:flex">
+          <Link
+            href="#features"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Features
+          </Link>
+          <Link
+            href="#how-it-works"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            How It Works
+          </Link>
+          <Link
+            href="#benefits"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Benefits
+          </Link>
+          <Link
+            href="#faq"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            FAQ
+          </Link>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <Button onClick={scrollToWaitlist} size="lg" className="hidden md:flex">
+            Join Waitlist
+          </Button>
+          <Button onClick={scrollToWaitlist} size="default" className="md:hidden">
+            Join
+          </Button>
+        </div>
+      </div>
+    </nav>
+  )
+}
