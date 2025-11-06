@@ -7,11 +7,10 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#071013] to-[#eb5160]">
-                <span className="text-lg font-bold text-white">M</span>
-              </div>
-              <span className="text-xl font-bold">MrMorris</span>
+            <Link href="/" className="flex items-center">
+              <span className="font-heading text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 bg-clip-text text-transparent">
+                MrMorris
+              </span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Your autonomous marketing team that never sleeps.

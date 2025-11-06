@@ -10,6 +10,8 @@ const steps = [
     title: "Set Your Goals",
     description:
       "Tell MrMorris what you want to achieve: \"Increase demo bookings by 30% this quarter\" or \"Generate 500 qualified leads.\" It asks clarifying questions to understand constraints and priorities.",
+    circleGradient: "from-blue-600 to-cyan-500",
+    iconGradient: "from-blue-500/20 to-cyan-500/20",
   },
   {
     icon: Cog,
@@ -17,6 +19,8 @@ const steps = [
     title: "MrMorris Strategizes & Executes",
     description:
       "The system creates a complete multi-channel strategy, allocates budget, defines KPIs, builds campaigns, creates content, and launches everything—all autonomously. You approve once, it handles the rest.",
+    circleGradient: "from-purple-600 to-pink-500",
+    iconGradient: "from-purple-500/20 to-pink-500/20",
   },
   {
     icon: TrendingUp,
@@ -24,6 +28,8 @@ const steps = [
     title: "Continuous Optimization & Learning",
     description:
       "MrMorris monitors performance 24/7, adjusts bids, reallocates budget, tests new variations, and scales winners in real-time. It learns from every campaign and gets smarter over time.",
+    circleGradient: "from-emerald-600 to-teal-500",
+    iconGradient: "from-emerald-500/20 to-teal-500/20",
   },
 ]
 
@@ -40,7 +46,7 @@ export function HowItWorks() {
         >
           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             How{" "}
-            <span className="bg-gradient-to-r from-[#eb5160] to-[#b7999c] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 bg-clip-text text-transparent">
               It Works
             </span>
           </h2>
@@ -66,20 +72,20 @@ export function HowItWorks() {
 
               {/* Step Number Circle */}
               <div className="flex-shrink-0">
-                <div className="flex h-28 w-28 items-center justify-center rounded-full border-4 border-primary/20 bg-gradient-to-br from-[#071013] to-[#eb5160]">
+                <div className={`flex h-28 w-28 items-center justify-center rounded-full border-4 border-primary/20 bg-gradient-to-br ${step.circleGradient} shadow-lg`}>
                   <span className="text-3xl font-bold text-white">{step.number}</span>
                 </div>
               </div>
 
               {/* Arrow */}
               <div className="hidden flex-shrink-0 md:block">
-                <ArrowRight className="h-8 w-8 text-primary" />
+                <ArrowRight className="h-8 w-8 text-muted-foreground" />
               </div>
 
               {/* Content */}
-              <div className="flex-1 rounded-xl border-2 border-border bg-card p-6 shadow-lg backdrop-blur">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <step.icon className="h-6 w-6 text-primary" />
+              <div className="flex-1 rounded-xl border-2 border-border bg-card p-6 shadow-lg backdrop-blur hover:border-primary/50 transition-colors">
+                <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${step.iconGradient} shadow-md`}>
+                  <step.icon className="h-7 w-7 text-foreground" />
                 </div>
                 <h3 className="mb-3 text-2xl font-bold">{step.title}</h3>
                 <p className="text-muted-foreground">{step.description}</p>
