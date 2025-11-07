@@ -110,7 +110,7 @@ export function CoreFeatures() {
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-            MrMorris doesn't just automate tasks—it thinks strategically, learns continuously,
+            MrMorris doesn&apos;t just automate tasks—it thinks strategically, learns continuously,
             and executes with precision across your entire marketing stack.
           </p>
         </motion.div>

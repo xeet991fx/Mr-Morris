@@ -69,9 +69,9 @@ export function WaitlistCTA() {
                   className="flex flex-col items-center justify-center py-8"
                 >
                   <CheckCircle className="mb-4 h-16 w-16 text-green-600" />
-                  <h3 className="mb-2 text-2xl font-bold">You're on the list!</h3>
+                  <h3 className="mb-2 text-2xl font-bold">You&apos;re on the list!</h3>
                   <p className="text-muted-foreground">
-                    We'll be in touch soon with more information about MrMorris.
+                    We&apos;ll be in touch soon with more information about MrMorris.
                   </p>
                 </motion.div>
               ) : (
@@ -149,7 +149,7 @@ export function WaitlistCTA() {
                   </Button>
 
                   <p className="text-xs text-muted-foreground">
-                    By joining, you'll get early access pricing and exclusive updates. No spam, ever.
+                    By joining, you&apos;ll get early access pricing and exclusive updates. No spam, ever.
                   </p>
                 </form>
               )}
