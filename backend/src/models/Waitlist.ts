@@ -1,13 +1,13 @@
-import mongoose, { Model, Schema } from "mongoose"
+import mongoose, { Model, Schema } from "mongoose";
 
 export interface IWaitlist {
-  email: string
-  companyName?: string
-  role?: string
-  teamSize?: string
-  source?: string
-  createdAt: Date
-  updatedAt: Date
+  email: string;
+  companyName?: string;
+  role?: string;
+  teamSize?: string;
+  source?: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 const WaitlistSchema = new Schema<IWaitlist>(
@@ -43,10 +43,8 @@ const WaitlistSchema = new Schema<IWaitlist>(
   {
     timestamps: true,
   }
-)
+);
 
-// Prevent model recompilation during hot reloads
-const Waitlist: Model<IWaitlist> =
-  mongoose.models.Waitlist || mongoose.model<IWaitlist>("Waitlist", WaitlistSchema)
+const Waitlist: Model<IWaitlist> = mongoose.model<IWaitlist>("Waitlist", WaitlistSchema);
 
-export default Waitlist
+export default Waitlist;

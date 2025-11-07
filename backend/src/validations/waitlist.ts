@@ -1,4 +1,4 @@
-import { z } from "zod"
+import { z } from "zod";
 
 export const waitlistSchema = z.object({
   email: z
@@ -9,6 +9,6 @@ export const waitlistSchema = z.object({
   role: z.string().optional(),
   teamSize: z.enum(["1-5", "6-20", "21-50", "51-200", "200+"]).optional(),
   source: z.string().optional(),
-})
+});
 
-export type WaitlistFormData = z.infer<typeof waitlistSchema>
+export type WaitlistFormData = z.infer<typeof waitlistSchema>;

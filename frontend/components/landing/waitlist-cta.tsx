@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -9,48 +8,34 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { waitlistSchema, type WaitlistFormData } from "@/lib/validations/waitlist"
+import { useWaitlistStore } from "@/store/useWaitlistStore"
+import { joinWaitlist } from "@/lib/api/waitlist"
 
 export function WaitlistCTA() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-  const [errorMessage, setErrorMessage] = useState("")
+  const { isSubmitting, isSuccess, error, setSubmitting, setSuccess, setError, reset: resetStore } = useWaitlistStore()
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    reset: resetForm,
   } = useForm<WaitlistFormData>({
     resolver: zodResolver(waitlistSchema),
   })
 
   const onSubmit = async (data: WaitlistFormData) => {
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
-    setErrorMessage("")
+    setSubmitting(true)
+    setError(null)
 
     try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to join waitlist")
-      }
-
-      setSubmitStatus("success")
-      reset()
-    } catch (error) {
-      setSubmitStatus("error")
-      setErrorMessage(error instanceof Error ? error.message : "Something went wrong")
+      await joinWaitlist(data)
+      setSuccess(true)
+      resetForm()
+    } catch (err: any) {
+      const errorMessage = err.response?.data?.error || err.message || "Something went wrong"
+      setError(errorMessage)
     } finally {
-      setIsSubmitting(false)
+      setSubmitting(false)
     }
   }
 
@@ -77,7 +62,7 @@ export function WaitlistCTA() {
 
           <Card className="border-2 bg-card/80 backdrop-blur">
             <CardContent className="p-8">
-              {submitStatus === "success" ? (
+              {isSuccess ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -140,10 +125,10 @@ export function WaitlistCTA() {
                     </div>
                   </div>
 
-                  {submitStatus === "error" && (
+                  {error && (
                     <div className="flex items-center gap-2 rounded-md bg-destructive/10 p-3 text-sm text-destructive">
                       <AlertCircle className="h-4 w-4" />
-                      <p>{errorMessage}</p>
+                      <p>{error}</p>
                     </div>
                   )}
 

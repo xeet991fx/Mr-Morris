@@ -51,7 +51,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <Button onClick={scrollToWaitlist} size="lg" className="hidden md:flex">
-            Join Waitlist
+            Talk To Us
           </Button>
           <Button onClick={scrollToWaitlist} size="default" className="md:hidden">
             Join

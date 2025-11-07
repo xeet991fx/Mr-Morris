@@ -66,7 +66,7 @@ export function Hero() {
             className="flex flex-col gap-4 sm:flex-row"
           >
             <Button onClick={scrollToWaitlist} size="xl" className="group">
-              Join the Waitlist
+              Talk To Us
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button onClick={scrollToWaitlist} size="xl" variant="outline">

@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description: "Your AI Marketing Team That Never Sleeps. Multi-agent autonomous marketing system that manages campaigns, optimizes performance, and drives results 24/7.",
   keywords: ["AI marketing", "marketing automation", "marketing copilot", "autonomous marketing", "marketing agencies", "AI agents", "campaign optimization"],
   authors: [{ name: "MrMorris" }],
+  icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
     title: "MrMorris - Autonomous Marketing Copilot for Agencies",
     description: "Your AI Marketing Team That Never Sleeps. Multi-agent autonomous marketing system for agencies.",

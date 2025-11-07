@@ -18,13 +18,29 @@
       "mcp__playwright__browser_close",
       "Bash(npm install:*)",
       "Bash(timeout:*)",
-      "mcp__playwright__browser_evaluate"
+      "mcp__playwright__browser_evaluate",
+      "Bash(NUL)",
+      "Bash(move app frontendapp)",
+      "Bash(move:*)",
+      "Bash(move public frontendpublic)",
+      "Bash(npm run dev:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx ts-node:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill /F /PID 32912)",
+      "Bash(taskkill //F //PID 32912)",
+      "Bash(curl:*)",
+      "Bash(taskkill //F //PID 33748)",
+      "Bash(git rm:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "shadcn"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }
